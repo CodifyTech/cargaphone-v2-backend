@@ -1,0 +1,1 @@
+<CDFAutoComplete v-model="{{vModel}}" :label="$t('{{label}}')" :placeholder="$t('{{placeholder}}')" :rules="[{{rules}}]" :items="[]" item-value="" item-title="" :return-object="false" no-data-text="Nenhum registro encontrado"/>

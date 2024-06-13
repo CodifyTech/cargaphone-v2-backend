@@ -1,0 +1,1 @@
+<InputDinheiro v-model="{{vModel}}" :label="$t('{{label}}')" :placeholder="$t('{{placeholder}}')" prepend-inner-icon="tabler-currency-real" :rules="[{{rules}}]" />

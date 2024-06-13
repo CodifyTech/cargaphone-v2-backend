@@ -1,0 +1,19 @@
+<?php
+
+namespace {{namespace}};
+
+use Illuminate\Database\Eloquent\Model;
+use Domains\Shared\Traits\Uuid;
+
+class {{model_name}} extends Model
+{
+    use Uuid;
+
+    protected $fillable = [
+        {{fillable}}
+    ];
+
+    public $incrementing = false;
+    protected $keyType = 'uuid';
+    protected $table = '{{table_name}}';
+}
