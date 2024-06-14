@@ -58,4 +58,12 @@ Route::middleware(['auth:sanctum'])->group(function () {
     Route::prefix('usuarios')->apiResource('usuarios', UserController::class);
     Route::get('usuarios/pesquisarpor/{field}/{value}/{relation?}', [UserController::class, 'search']);
     Route::get('usuarios/listar/roles', [UserController::class, 'roles']);
+
+	/*
+	 * Route: estabelecimento
+	 * Created at: 2024-06-14 17:31:18
+	 */
+	Route::prefix('estabelecimento')->apiResource('estabelecimento', Domains\Estabelecimento\Controllers\EstabelecimentoController::class);
+	Route::get('estabelecimento/pesquisarpor/{field}/{value}/{relation?}', [Domains\Estabelecimento\Controllers\EstabelecimentoController::class, 'search']);
+
 });
