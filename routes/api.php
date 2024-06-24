@@ -66,4 +66,38 @@ Route::middleware(['auth:sanctum'])->group(function () {
 	Route::prefix('estabelecimento')->apiResource('estabelecimento', Domains\Estabelecimento\Controllers\EstabelecimentoController::class);
 	Route::get('estabelecimento/pesquisarpor/{field}/{value}/{relation?}', [Domains\Estabelecimento\Controllers\EstabelecimentoController::class, 'search']);
 
+
+	/*
+	 * Route: unidade
+	 * Created at: 2024-06-18 15:36:54
+	 */
+	Route::prefix('unidade')->apiResource('unidade', Domains\Unidade\Controllers\UnidadeController::class);
+	Route::get('unidade/pesquisarpor/{field}/{value}/{relation?}', [Domains\Unidade\Controllers\UnidadeController::class, 'search']);
+
+
+	/*
+	 * Route: unidade
+	 * Created at: 2024-06-18 16:08:56
+	 */
+	Route::prefix('unidade')->apiResource('unidade', Domains\Unidade\Controllers\UnidadeController::class);
+	Route::get('unidade/pesquisarpor/{field}/{value}/{relation?}', [Domains\Unidade\Controllers\UnidadeController::class, 'search']);
+
+
+	/*
+	 * Route: toten
+	 * Created at: 2024-06-24 10:52:57
+	 */
+	Route::prefix('toten')->apiResource('toten', Domains\Toten\Controllers\TotenController::class);
+	Route::get('toten/pesquisarpor/{field}/{value}/{relation?}', [Domains\Toten\Controllers\TotenController::class, 'search']);
+	Route::get('toten/listar/estabelecimento', [Domains\Toten\Controllers\TotenController::class, 'listarEstabelecimento']);
+	Route::get('toten/listar/unidade', [Domains\Toten\Controllers\TotenController::class, 'listarUnidade']);
+
+	/*
+	 * Route: totem
+	 * Created at: 2024-06-24 16:07:24
+	 */
+	Route::prefix('totem')->apiResource('totem', Domains\Totem\Controllers\TotemController::class);
+	Route::get('totem/pesquisarpor/{field}/{value}/{relation?}', [Domains\Totem\Controllers\TotemController::class, 'search']);
+	Route::get('totem/listar/estabelecimento', [Domains\Totem\Controllers\TotemController::class, 'listarEstabelecimento']);
+	Route::get('totem/listar/unidade', [Domains\Totem\Controllers\TotemController::class, 'listarUnidade']);
 });

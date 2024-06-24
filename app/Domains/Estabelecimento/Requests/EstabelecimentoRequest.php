@@ -10,20 +10,20 @@ class EstabelecimentoRequest extends BaseFormRequest
     {
         return [
             "nome" => "string|max:40|required",
-"razao_social" => "string|max:40",
-"documento_legal" => "string|max:50",
-"cnpj" => "string|max:18",
-"segmentacao" => "boolean",
-"responsavel" => "string|max:60|required",
-"email_responsavel" => "string|max:35|required",
-"telefone_responsavel" => "string|max:15",
-"cep" => "string|max:10|required",
-"endereco" => "string|max:50|required",
-"numero" => "string",
-"cidade" => "string|max:30|required",
-"complemento" => "string|max:30",
-"estado" => "string|max:2|required",
-"data_ativacao" => "date_format:Y-m-d H:i:s|required"
+            "razao_social" => "string|max:40",
+            "documento_legal" => "string|max:50",
+            "cnpj" => "string|max:18",
+            "segmentacao" => "sometimes",
+            "responsavel" => "string|max:60|required",
+            "email_responsavel" => "string|max:35|required",
+            "telefone_responsavel" => "string|max:15",
+            "cep" => "string|max:10|required",
+            "endereco" => "string|max:50|required",
+            "numero" => "string",
+            "cidade" => "string|max:30|required",
+            "complemento" => "string|max:30",
+            "estado" => "string|max:2|required",
+            "data_ativacao" => "date_format:Y-m-d|required"
         ];
     }
 

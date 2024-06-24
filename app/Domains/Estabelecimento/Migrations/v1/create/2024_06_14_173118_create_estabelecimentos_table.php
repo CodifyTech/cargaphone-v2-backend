@@ -1,5 +1,6 @@
 <?php
 
+use Domains\Estabelecimento\Enums\SegmentacaoEnum;
 use Domains\Shared\Migrations\BaseMigration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -17,7 +18,12 @@ return new class extends BaseMigration
 			$table->string("razao_social", 40)->nullable();
 			$table->string("documento_legal", 50)->nullable();
 			$table->string("cnpj", 18)->nullable();
-			$table->enum("segmentacao")->nullable();
+			$table->enum("segmentacao",[
+                SegmentacaoEnum::SHOPPING->value,
+                SegmentacaoEnum::RESTAURANTE->value,
+                SegmentacaoEnum::BAR->value,
+                SegmentacaoEnum::AEROPORTO->value,
+            ])->nullable();
 			$table->string("responsavel", 60);
 			$table->string("email_responsavel", 35);
 			$table->string("telefone_responsavel", 15)->nullable();
@@ -27,7 +33,7 @@ return new class extends BaseMigration
 			$table->string("cidade", 30);
 			$table->string("complemento", 30)->nullable();
 			$table->string("estado", 2);
-			$table->datetime("data_ativacao", );
+			$table->date("data_ativacao", );
             $table->timestamps();
         });
     }
