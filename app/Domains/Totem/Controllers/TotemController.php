@@ -16,13 +16,22 @@ class TotemController extends BaseController
         $this->setBll($this->totemBLL);
         $this->setRequest('request', TotemRequest::class);
     }
+
     // 👉 methods
-    public function listarEstabelecimento(Request $request) {
-		$options = $request->all();
-		return $this->totemBLL->listarEstabelecimento($options);
-	}
-public function listarUnidade(Request $request) {
-		$options = $request->all();
-		return $this->totemBLL->listarUnidade($options);
-	}
+    public function listarEstabelecimento(Request $request)
+    {
+        $options = $request->all();
+        return $this->totemBLL->listarEstabelecimento($options);
+    }
+
+    public function listarUnidade(Request $request)
+    {
+        $options = $request->all();
+        return $this->totemBLL->listarUnidade($options);
+    }
+
+    public function totemsEAnuncios(Request $request)
+    {
+        return $this->totemBLL->totemsEAnuncios($request->all());
+    }
 }

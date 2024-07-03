@@ -29,7 +29,7 @@ class BaseController extends Controller implements IController
      */
     public function __construct()
     {
-        $this->middleware('auth:sanctum', ['except' => ['login', 'register', 'forgotPassword', 'resetPassword']]);
+        $this->middleware('auth:sanctum', ['except' => ['login', 'register', 'forgotPassword', 'resetPassword', 'totemsEAnuncios']]);
     }
 
     /**

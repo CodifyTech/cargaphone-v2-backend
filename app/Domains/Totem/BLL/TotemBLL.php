@@ -12,10 +12,17 @@ class TotemBLL extends BaseBLL
         $this->setService($this->totemService);
     }
     // 👉 methods
-    public function listarEstabelecimento($options) {
-		return $this->totemService->listarEstabelecimento($options);
-	}
-public function listarUnidade($options) {
-		return $this->totemService->listarUnidade($options);
-	}
+    public function listarEstabelecimento($options)
+    {
+        return $this->totemService->listarEstabelecimento($options);
+    }
+    public function listarUnidade($options)
+    {
+        return $this->totemService->listarUnidade($options);
+    }
+
+    public function totemsEAnuncios($options)
+    {
+        return $this->totemService->totemsEAnuncios($options);
+    }
 }
