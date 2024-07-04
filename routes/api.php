@@ -91,5 +91,6 @@ Route::middleware(['auth:sanctum'])->group(function () {
 	 */
 	Route::prefix('anuncio')->apiResource('anuncio', Domains\Anuncio\Controllers\AnuncioController::class);
 	Route::get('anuncio/pesquisarpor/{field}/{value}/{relation?}', [Domains\Anuncio\Controllers\AnuncioController::class, 'search']);
+    Route::get('anuncio/listar/totem', [Domains\Anuncio\Controllers\AnuncioController::class, 'listarTotems']);
 
 });

@@ -9,8 +9,35 @@ class AnuncioRequest extends BaseFormRequest
     public function base(): array
     {
         return [
-            "nome" => "string|max:60|required",
-"arquivo" => "string|max:req"
+            'nome' => [
+                'required',
+            ],
+            'arquivo' => [
+                'required',
+            ],
+            'nome_anunciante' => [
+                'required',
+            ],
+            'valor_anuncio_mensal' => [
+                'required',
+            ],
+            'data_comeco_campanha' => [
+                'required',
+            ],
+            'data_fim_campanha' => [
+                'required',
+            ],
+            'tipo_campanha' => [
+                'required',
+            ],
+            'tel_contato_anunciante' => [
+                'required',
+            ],
+            'email_contato' => [
+                'required',
+                'email',
+                'max:40',
+            ],
         ];
     }
 

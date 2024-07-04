@@ -10,7 +10,6 @@ class TotemRequest extends BaseFormRequest
     {
         return [
             "nome" => "string|max:40|required",
-            "identificador" => "string|max:40|required",
             "descricao" => "string|max:100",
             "ip" => "string|max:100",
             "latitude" => "string|max:50",

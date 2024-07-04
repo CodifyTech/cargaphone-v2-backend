@@ -2,6 +2,7 @@
 
 namespace Domains\Anuncio\Models;
 
+use Domains\Anuncio\Enums\TipoCampanha;
 use Illuminate\Database\Eloquent\Model;
 use Domains\Shared\Traits\Uuid;
 use Domains\Totem\Models\Totem;
@@ -26,9 +27,16 @@ class Anuncio extends Model
         'ativo',
         'tel_contato_anunciante',
         'email_contato',
-        'totem_id',
         'tenant_id'
     ];
+
+    protected $casts = [
+        'tipo_campanha' => TipoCampanha::class,
+        'exclude' => 'boolean',
+        'dataAlteracao' => 'datetime:d/m/Y'
+    ];
+
+    protected $dates = ['data_comeco_campanha', 'data_fim_campanha'];
 
     public $incrementing = false;
     protected $keyType = 'uuid';

@@ -17,5 +17,12 @@ class AnuncioController extends BaseController
         $this->setRequest('request', AnuncioRequest::class);
     }
     // 👉 methods
-    
+
+    public function listarTotems(Request $request)
+    {
+
+        $options = $request->all();
+        return $this->anuncioBLL->listarTotems($options);
+    }
+
 }

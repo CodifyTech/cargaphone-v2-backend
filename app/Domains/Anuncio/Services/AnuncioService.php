@@ -11,6 +11,15 @@ class AnuncioService extends BaseService
     {
         $this->setModel($this->anuncio);
     }
+
     // 👉 methods
-    
+    public function listarTotems($options)
+    {
+        $data = \Domains\Totem\Models\Totem::query()->paginate($options['per_page'] ?? 15);
+        return [
+            'data' => $data->items(),
+            'total' => $data->total(),
+            'page' => $data->currentPage(),
+        ];
+    }
 }
